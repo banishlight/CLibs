@@ -1,4 +1,5 @@
-
+#ifndef _LINKLIST
+#define _LINKLIST
 
 typedef struct _node {
    void* item;
@@ -33,3 +34,5 @@ void ListConcat(LIST* list1, LIST* list2);
 void ListFree(LIST* list, void* itemFree);
 void* ListTrim(LIST* list);
 void* ListSearch(LIST* list, void* comparator, void* comparatorArg);
+
+#endif
