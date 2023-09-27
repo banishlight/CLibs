@@ -17,9 +17,7 @@ LIST* ListCreate() {
 returns the number of items in list
 */
 int ListCount(LIST* list) {
-
-
-
+   return newList->count;
 }
 
 /*
