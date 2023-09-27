@@ -44,9 +44,11 @@ current item.  If this operation attempts to advance the current item beyond
 the end of the list, a NULL pointer is returned.
 */
 void* ListNext (LIST* list) {
-
-
-
+   if(list->current == list->last) {
+      return NULL;
+   }
+   list->current = list->current->next;
+   return list->current->item;
 }
 
 /*
