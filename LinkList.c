@@ -25,9 +25,8 @@ returns a pointer to the first item in list and makes the first item the
 currrent item. 
 */
 void* ListFirst(LIST* list) {
-
-
-
+   list->current = list->first;
+   return list->first->item;
 }
 
 /*
@@ -35,9 +34,8 @@ returns a pointer to the last item in the list and makes the last item the
 current item.
 */
 void* ListLast(LIST* list) {
-
-
-
+   list->current = list->current;
+   return list->last->item;
 }
 
 /*
