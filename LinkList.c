@@ -68,9 +68,7 @@ void* ListPrev(LIST* list) {
 returns a pointer to the current item in list.
 */
 void* ListCurr(LIST* list) {
-
-
-
+return list->current->item;
 }
 
 /*
@@ -79,9 +77,29 @@ the current item.  If the pointer is at the end of the list, tthe item is
 added at teh end.  Returns 0 on success and -1 on failure.
 */
 int ListAdd(LIST* list, void* item) {
-
-
-
+	Node* newNode = malloc(sizeof(Node));
+	newNode->item = item;
+	newNode->prev = NULL;
+	newNode->next = NULL;
+	if(list->count == 0) {
+		list->first = newNode;
+		list->last = newNode;
+	}
+	else {
+		if(list->current == list->last) {
+			newNode->next = NULL;
+			list->last = newNode;
+		}
+		else {
+			newNode->next = list->current->next;
+			list->current->next->prev = newNode;
+		}
+		newNode->prev = list->current;
+		list->current->next = newNode;
+	}
+	list->current = newNode;
+	list->count += 1;
+	return 0;
 }
 
 /*
