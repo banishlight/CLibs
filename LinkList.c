@@ -57,9 +57,11 @@ current item.  If this operation attempts to back up the current item beyond
 the start of the list, a NULL pointer is returned.
 */
 void* ListPrev(LIST* list) {
-
-
-
+   if(list->current == list->first) {
+      return NULL;
+   }
+   list->current = list->current->prev;
+   return list->current->item;
 }
 
 /*
