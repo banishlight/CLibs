@@ -8,8 +8,9 @@ pointer on failure.
 
 LIST* ListCreate() {
    LIST* newList = malloc(sizeof(LIST));
-   
-
+   newList->count = 0;
+   newList->first = NULL;
+   newList->last = NULL;
 }
 
 /*
