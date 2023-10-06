@@ -7,17 +7,17 @@ pointer on failure.
 */
 
 LIST* ListCreate() {
-   LIST* newList = malloc(sizeof(LIST));
-   newList->count = 0;
-   newList->first = NULL;
-   newList->last = NULL;
+	LIST* newList = malloc(sizeof(LIST));
+	newList->count = 0;
+	newList->first = NULL;
+	newList->last = NULL;
 }
 
 /*
 returns the number of items in list
 */
 int ListCount(LIST* list) {
-   return newList->count;
+	return newList->count;
 }
 
 /*
@@ -25,8 +25,8 @@ returns a pointer to the first item in list and makes the first item the
 currrent item. 
 */
 void* ListFirst(LIST* list) {
-   list->current = list->first;
-   return list->first->item;
+	list->current = list->first;
+	return list->first->item;
 }
 
 /*
@@ -34,8 +34,8 @@ returns a pointer to the last item in the list and makes the last item the
 current item.
 */
 void* ListLast(LIST* list) {
-   list->current = list->current;
-   return list->last->item;
+	list->current = list->current;
+	return list->last->item;
 }
 
 /*
@@ -44,11 +44,11 @@ current item.  If this operation attempts to advance the current item beyond
 the end of the list, a NULL pointer is returned.
 */
 void* ListNext (LIST* list) {
-   if(list->current == list->last) {
-      return NULL;
-   }
-   list->current = list->current->next;
-   return list->current->item;
+	if(list->current == list->last) {
+		return NULL;
+	}
+	list->current = list->current->next;
+	return list->current->item;
 }
 
 /*
